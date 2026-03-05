@@ -1,0 +1,25 @@
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: rgba(56, 189, 248, 0.35);
+  color: #f8fafc;
+}
+
+.hero-glow {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(14, 165, 233, 0.2) 0%, transparent 45%),
+    radial-gradient(circle at 80% 10%, rgba(59, 130, 246, 0.15) 0%, transparent 40%),
+    linear-gradient(180deg, #020617 0%, #020617 100%);
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded-lg border border-cyan-300/25 bg-cyan-500 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-cyan-400;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-900 px-4 py-2 text-sm font-medium text-slate-100 transition hover:border-cyan-300/40 hover:text-cyan-200;
+  }
+}
