@@ -2,8 +2,8 @@
 @import "../styles/portfolio.css";
 
 :root {
-  --background: #020617;
-  --foreground: #e2e8f0;
+  --background: #09090b;
+  --foreground: #e5e7eb;
 }
 
 @theme inline {

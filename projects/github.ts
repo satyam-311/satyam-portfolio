@@ -12,15 +12,46 @@ const FALLBACK_STATS: GitHubStats = {
   profileUrl: "https://github.com/satyam-311",
 };
 
+async function getRepoCountFromProfileHtml(username: string): Promise<number | null> {
+  try {
+    const response = await fetch(`https://github.com/${username}`, {
+      next: { revalidate: 3600 },
+    });
+
+    if (!response.ok) {
+      return null;
+    }
+
+    const html = await response.text();
+    const descriptionMatch = html.match(/has\s+([\d,]+)\s+repositories?\s+available/i);
+    if (!descriptionMatch?.[1]) {
+      return null;
+    }
+
+    const parsed = Number(descriptionMatch[1].replace(/,/g, ""));
+    return Number.isFinite(parsed) ? parsed : null;
+  } catch {
+    return null;
+  }
+}
+
 export async function getGitHubStats(username: string): Promise<GitHubStats> {
   const profileUrl = `https://github.com/${username}`;
+  const apiHeaders = process.env.GITHUB_TOKEN
+    ? {
+        Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+        Accept: "application/vnd.github+json",
+      }
+    : undefined;
 
   try {
     const [userRes, reposRes, contributionsRes] = await Promise.all([
       fetch(`https://api.github.com/users/${username}`, {
+        headers: apiHeaders,
         next: { revalidate: 3600 },
       }),
       fetch(`https://api.github.com/users/${username}/repos?per_page=100`, {
+        headers: apiHeaders,
         next: { revalidate: 3600 },
       }),
       fetch(`https://github-contributions-api.jogruber.de/v4/${username}`, {
@@ -33,8 +64,14 @@ export async function getGitHubStats(username: string): Promise<GitHubStats> {
     const contributionsData = contributionsRes.ok
       ? await contributionsRes.json()
       : null;
+    const repoCountFromProfile =
+      userData?.public_repos == null && !reposRes.ok
+        ? await getRepoCountFromProfileHtml(username)
+        : null;
 
-    const repositories = Number(userData?.public_repos ?? reposData?.length ?? 0);
+    const repositories = Number(
+      userData?.public_repos ?? reposData?.length ?? repoCountFromProfile ?? 0,
+    );
     const stars = Array.isArray(reposData)
       ? reposData.reduce(
           (sum: number, repo: { stargazers_count?: number }) =>

@@ -5,7 +5,6 @@ import {
   FaArrowRight,
   FaBrain,
   FaCloud,
-  FaCode,
   FaCog,
   FaDownload,
   FaEnvelope,
@@ -38,7 +37,6 @@ const iconMap = {
 const statCards = (stats: GitHubStats) => [
   { label: "Repositories", value: stats.repositories.toString(), icon: FaProjectDiagram },
   { label: "Stars", value: stats.stars.toString(), icon: FaStar },
-  { label: "Contributions", value: stats.contributions, icon: FaCode },
 ];
 
 const sectionTitleClass =
@@ -51,7 +49,7 @@ export default function PortfolioPage({ githubStats }: PortfolioPageProps) {
 
       <header className="sticky top-0 z-50 border-b border-slate-800/80 bg-slate-950/85 backdrop-blur-lg">
         <nav className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4">
-          <a href="#" className="font-mono text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">
+          <a href="#" className="font-mono text-sm font-semibold uppercase tracking-[0.2em] text-zinc-300">
             Satyam Mishra
           </a>
           <div className="hidden items-center gap-6 md:flex">
@@ -59,7 +57,7 @@ export default function PortfolioPage({ githubStats }: PortfolioPageProps) {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm text-slate-300 transition hover:text-cyan-300"
+                className="text-sm text-slate-300 transition hover:text-zinc-100"
               >
                 {link.label}
               </a>
@@ -74,13 +72,13 @@ export default function PortfolioPage({ githubStats }: PortfolioPageProps) {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="rounded-3xl border border-slate-800 bg-slate-900/70 p-8 shadow-[0_0_60px_rgba(56,189,248,0.08)] sm:p-12"
+            className="rounded-3xl border border-slate-800 bg-slate-900/70 p-8 shadow-[0_0_60px_rgba(113,113,122,0.18)] sm:p-12"
           >
-            <p className="mb-4 font-mono text-sm uppercase tracking-[0.25em] text-cyan-300">
+            <p className="mb-4 font-mono text-sm uppercase tracking-[0.25em] text-zinc-300">
               AI/ML Engineer Portfolio
             </p>
             <h1 className="text-4xl font-bold text-white sm:text-6xl">Satyam Mishra</h1>
-            <p className="mt-4 text-base font-medium text-cyan-200 sm:text-lg">
+            <p className="mt-4 text-base font-medium text-zinc-300 sm:text-lg">
               AI/ML Engineer | Generative AI | RAG Systems | MLOps
             </p>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-slate-300">
@@ -128,14 +126,14 @@ export default function PortfolioPage({ githubStats }: PortfolioPageProps) {
                   className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6"
                 >
                   <div className="mb-4 flex items-center gap-3">
-                    <CategoryIcon className="text-xl text-cyan-300" />
+                    <CategoryIcon className="text-xl text-zinc-300" />
                     <h3 className="text-lg font-semibold text-white">{category.title}</h3>
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {category.skills.map((skill) => (
                       <span
                         key={skill}
-                        className="rounded-full border border-cyan-400/25 bg-cyan-400/10 px-3 py-1 text-sm text-cyan-100"
+                        className="rounded-full border border-zinc-600/40 bg-zinc-800/60 px-3 py-1 text-sm text-zinc-200"
                       >
                         {skill}
                       </span>
@@ -177,7 +175,7 @@ export default function PortfolioPage({ githubStats }: PortfolioPageProps) {
                 <ul className="mt-5 space-y-2 text-sm text-slate-300">
                   {project.features.map((feature) => (
                     <li key={feature} className="flex gap-2">
-                      <span className="mt-[7px] h-1.5 w-1.5 rounded-full bg-cyan-300" />
+                      <span className="mt-[7px] h-1.5 w-1.5 rounded-full bg-zinc-300" />
                       <span>{feature}</span>
                     </li>
                   ))}
@@ -188,7 +186,7 @@ export default function PortfolioPage({ githubStats }: PortfolioPageProps) {
                     href={project.github}
                     target="_blank"
                     rel="noreferrer"
-                    className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-cyan-300 transition hover:text-cyan-200"
+                    className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-zinc-300 transition hover:text-zinc-100"
                   >
                     View Repository <FaExternalLinkAlt />
                   </a>
@@ -207,7 +205,7 @@ export default function PortfolioPage({ githubStats }: PortfolioPageProps) {
             <p className="mt-2 text-sm italic text-slate-400">Feb 2024 - May 2024</p>
             <ul className="mt-4 space-y-3 text-slate-300">
               <li className="flex gap-2">
-                <span className="mt-[8px] h-1.5 w-1.5 rounded-full bg-cyan-300" />
+                <span className="mt-[8px] h-1.5 w-1.5 rounded-full bg-zinc-300" />
                 <span>
                   Led research on fake news detection using Logistic Regression, achieving{" "}
                   <strong>97% training accuracy and 98% testing accuracy</strong>, resulting in a{" "}
@@ -215,7 +213,7 @@ export default function PortfolioPage({ githubStats }: PortfolioPageProps) {
                 </span>
               </li>
               <li className="flex gap-2">
-                <span className="mt-[8px] h-1.5 w-1.5 rounded-full bg-cyan-300" />
+                <span className="mt-[8px] h-1.5 w-1.5 rounded-full bg-zinc-300" />
                 <span>
                   Developed a complete <strong>NLP pipeline</strong> using <em>scikit-learn</em>,
                   including <strong>lemmatization, stopword removal, and TF-IDF vectorization</strong>{" "}
@@ -223,7 +221,7 @@ export default function PortfolioPage({ githubStats }: PortfolioPageProps) {
                 </span>
               </li>
               <li className="flex gap-2">
-                <span className="mt-[8px] h-1.5 w-1.5 rounded-full bg-cyan-300" />
+                <span className="mt-[8px] h-1.5 w-1.5 rounded-full bg-zinc-300" />
                 <span>
                   Built a <strong>binary classifier</strong> to detect misinformation on social
                   media and evaluated performance using <strong>F1-score, confusion matrix, and
@@ -231,7 +229,7 @@ export default function PortfolioPage({ githubStats }: PortfolioPageProps) {
                 </span>
               </li>
               <li className="flex gap-2">
-                <span className="mt-[8px] h-1.5 w-1.5 rounded-full bg-cyan-300" />
+                <span className="mt-[8px] h-1.5 w-1.5 rounded-full bg-zinc-300" />
                 <span>
                   Co-authored and presented research at an <strong>international conference</strong>,
                   contributing to AI/ML applications in misinformation detection.
@@ -239,10 +237,10 @@ export default function PortfolioPage({ githubStats }: PortfolioPageProps) {
               </li>
             </ul>
             <div className="mt-4 flex flex-wrap gap-3 text-sm">
-              <span className="rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-emerald-200">
+              <span className="rounded-full border border-zinc-600/50 bg-zinc-800 px-3 py-1 text-zinc-200">
                 97% training accuracy
               </span>
-              <span className="rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-emerald-200">
+              <span className="rounded-full border border-zinc-600/50 bg-zinc-800 px-3 py-1 text-zinc-200">
                 98% testing accuracy
               </span>
               <span className="rounded-full border border-slate-700 bg-slate-800 px-3 py-1 text-slate-200">
@@ -254,7 +252,7 @@ export default function PortfolioPage({ githubStats }: PortfolioPageProps) {
 
         <AnimatedSection id="github" className="space-y-8">
           <h2 className={sectionTitleClass}>GitHub</h2>
-          <div className="grid gap-5 md:grid-cols-3">
+          <div className="grid gap-5 md:grid-cols-2">
             {statCards(githubStats).map((stat) => {
               const StatIcon = stat.icon;
               return (
@@ -264,7 +262,7 @@ export default function PortfolioPage({ githubStats }: PortfolioPageProps) {
                 >
                   <div className="flex items-center justify-between">
                     <p className="text-sm uppercase tracking-wide text-slate-400">{stat.label}</p>
-                    <StatIcon className="text-cyan-300" />
+                    <StatIcon className="text-zinc-300" />
                   </div>
                   <p className="mt-3 text-3xl font-bold text-white">{stat.value}</p>
                 </div>
@@ -275,7 +273,7 @@ export default function PortfolioPage({ githubStats }: PortfolioPageProps) {
             href={githubStats.profileUrl}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-lg border border-cyan-400/30 bg-cyan-500/10 px-4 py-2 text-cyan-100 transition hover:bg-cyan-500/20"
+            className="inline-flex items-center gap-2 rounded-lg border border-zinc-600/60 bg-zinc-800 px-4 py-2 text-zinc-100 transition hover:bg-zinc-700"
           >
             Open GitHub Profile <FaGithub />
           </a>
@@ -288,13 +286,13 @@ export default function PortfolioPage({ githubStats }: PortfolioPageProps) {
               <p className="mb-4 text-slate-300">Open for AI/ML engineering internships and roles.</p>
               <a
                 href="mailto:satyam3112003@gmail.com"
-                className="mb-3 flex items-center gap-3 text-slate-200 transition hover:text-cyan-300"
+                className="mb-3 flex items-center gap-3 text-slate-200 transition hover:text-zinc-100"
               >
                 <FaEnvelope /> satyam3112003@gmail.com
               </a>
               <a
                 href="tel:+917011153889"
-                className="flex items-center gap-3 text-slate-200 transition hover:text-cyan-300"
+                className="flex items-center gap-3 text-slate-200 transition hover:text-zinc-100"
               >
                 <FaPhone /> +91 7011153889
               </a>
