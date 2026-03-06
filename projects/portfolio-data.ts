@@ -92,6 +92,7 @@ export const featuredProjects: Project[] = [
       "Resume-job matching",
       "Interactive scoring interface",
     ],
+    github: "https://github.com/satyam-311/ATS-score-checker",
   },
   {
     title: "Demographic Inversion Simulation",

@@ -202,12 +202,42 @@ export default function PortfolioPage({ githubStats }: PortfolioPageProps) {
           <h2 className={sectionTitleClass}>Research</h2>
           <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
             <h3 className="text-xl font-semibold text-white">
-              Fake News Detection Using Logistic Regression
+              Fake News Detection Using Logistic Regression - ICAMC 2024
             </h3>
-            <p className="mt-3 text-slate-300">
-              A research project focused on detecting fake news using NLP-based classification
-              techniques including TF-IDF vectorization and logistic regression.
-            </p>
+            <p className="mt-2 text-sm italic text-slate-400">Feb 2024 - May 2024</p>
+            <ul className="mt-4 space-y-3 text-slate-300">
+              <li className="flex gap-2">
+                <span className="mt-[8px] h-1.5 w-1.5 rounded-full bg-cyan-300" />
+                <span>
+                  Led research on fake news detection using Logistic Regression, achieving{" "}
+                  <strong>97% training accuracy and 98% testing accuracy</strong>, resulting in a{" "}
+                  <strong>peer-reviewed publication presented at ICAMC 2024</strong>.
+                </span>
+              </li>
+              <li className="flex gap-2">
+                <span className="mt-[8px] h-1.5 w-1.5 rounded-full bg-cyan-300" />
+                <span>
+                  Developed a complete <strong>NLP pipeline</strong> using <em>scikit-learn</em>,
+                  including <strong>lemmatization, stopword removal, and TF-IDF vectorization</strong>{" "}
+                  to convert unstructured text into structured features.
+                </span>
+              </li>
+              <li className="flex gap-2">
+                <span className="mt-[8px] h-1.5 w-1.5 rounded-full bg-cyan-300" />
+                <span>
+                  Built a <strong>binary classifier</strong> to detect misinformation on social
+                  media and evaluated performance using <strong>F1-score, confusion matrix, and
+                  accuracy metrics</strong>.
+                </span>
+              </li>
+              <li className="flex gap-2">
+                <span className="mt-[8px] h-1.5 w-1.5 rounded-full bg-cyan-300" />
+                <span>
+                  Co-authored and presented research at an <strong>international conference</strong>,
+                  contributing to AI/ML applications in misinformation detection.
+                </span>
+              </li>
+            </ul>
             <div className="mt-4 flex flex-wrap gap-3 text-sm">
               <span className="rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-emerald-200">
                 97% training accuracy
@@ -216,7 +246,7 @@ export default function PortfolioPage({ githubStats }: PortfolioPageProps) {
                 98% testing accuracy
               </span>
               <span className="rounded-full border border-slate-700 bg-slate-800 px-3 py-1 text-slate-200">
-                Published in ICAMC 2024
+                ICAMC 2024
               </span>
             </div>
           </div>
@@ -282,7 +312,7 @@ export default function PortfolioPage({ githubStats }: PortfolioPageProps) {
                   <FaGithub /> GitHub
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/satyam-mishra/"
+                  href="https://www.linkedin.com/in/satyam-mishra-974a921b5/"
                   target="_blank"
                   rel="noreferrer"
                   className="btn-secondary"
