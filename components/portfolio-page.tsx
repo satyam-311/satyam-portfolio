@@ -208,7 +208,7 @@ export default function PortfolioPage({ githubStats }: PortfolioPageProps) {
                 <span className="mt-[8px] h-1.5 w-1.5 rounded-full bg-zinc-300" />
                 <span>
                   Led research on fake news detection using Logistic Regression, achieving{" "}
-                  <strong>97% training accuracy and 98% testing accuracy</strong>, resulting in a{" "}
+                  <strong>94% training accuracy and 93% testing accuracy</strong>, resulting in a{" "}
                   <strong>peer-reviewed publication presented at ICAMC 2024</strong>.
                 </span>
               </li>
@@ -238,10 +238,10 @@ export default function PortfolioPage({ githubStats }: PortfolioPageProps) {
             </ul>
             <div className="mt-4 flex flex-wrap gap-3 text-sm">
               <span className="rounded-full border border-zinc-600/50 bg-zinc-800 px-3 py-1 text-zinc-200">
-                97% training accuracy
+                94% training accuracy
               </span>
               <span className="rounded-full border border-zinc-600/50 bg-zinc-800 px-3 py-1 text-zinc-200">
-                98% testing accuracy
+                93% testing accuracy
               </span>
               <span className="rounded-full border border-slate-700 bg-slate-800 px-3 py-1 text-slate-200">
                 ICAMC 2024
